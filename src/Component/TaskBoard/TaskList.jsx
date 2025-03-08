@@ -28,7 +28,7 @@ export default function TaskList({tasks,onEdit,onDelete, onFav})
               </thead>
               <tbody>
                   {
-                    tasks.map(task =>
+                    (tasks || []).map(task =>
                       (
                         <tr key={task.id} className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
                           <td>
@@ -61,7 +61,7 @@ export default function TaskList({tasks,onEdit,onDelete, onFav})
                           <td>
                               <div className="flex items-center justify-center space-x-3">
                                   <button className="text-red-500" onClick={() => onDelete(task.id)}>
-                                      Delete
+                                      Done
                                   </button>
                                   <button className="text-blue-500" onClick={() => onEdit(task)}>
                                       Edit

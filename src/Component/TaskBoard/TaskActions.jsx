@@ -15,7 +15,7 @@ export default function TaskActions({onAddTask, onDeleteAll}) {
               className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold"
               onClick = {onDeleteAll}
           >
-              Delete All
+              Done All
           </button>
       </div>
     </div>

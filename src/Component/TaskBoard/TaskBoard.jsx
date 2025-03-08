@@ -8,15 +8,11 @@ import NoTaskFound from "./NoTaskFound";
 
 export default function TaskBoard() 
     {
-        const defaultTask = {
-            'id' : crypto.randomUUID(),
-            'title' : "Learn React",
-            'des' : "I want to learn React such that I can treat it like my slave and make it do whatever I want to do.",
-            'tags' : ['web', 'react', 'js'],
-            'priority' : 'Hight',
-            'isFavorite' : true
-        }
-        const [tasks,setTask] = useState([defaultTask]);
+        // const defaultTask = 
+        //     {
+            
+        //     }
+        const [tasks,setTask] = useState([]);
         const [showAddModal, setShowAddModal] = useState(false);
         const [taskToUpdate, setTaskToUpdate] = useState(null);
 
@@ -76,7 +72,7 @@ export default function TaskBoard()
             }
 
         return (
-            <section className="mb-20" id="tasks">
+            <section className="mb-20 w-full" id="tasks">
                 {
                     showAddModal && <AddTaskModal 
                     onSave={handelAddEditTask}
@@ -84,7 +80,7 @@ export default function TaskBoard()
                     taskToUpdate = {taskToUpdate}
                     />
                 }
-                <div className="container">
+                <div className="container w-full mx-auto">
                     <div className="p-2 flex justify-end">
                         <SearchTask onSearch={handelSearch}/>
                     </div>
